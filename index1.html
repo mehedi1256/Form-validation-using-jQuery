@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('input[id="btn"]').attr('disabled',true);
+
+            $('input[id="outdoor_barcode"]').on('keyup',function(){
+                if($(this).val()  >= 16){
+                    $('input[id="btn"]').attr('disabled',false);
+                    document.getElementById("btn").style.color= "green";
+                    document.getElementById("btn").value = "ok";
+                }
+
+                else{
+                    $('input[id="btn"]').attr('disabled',true);
+                    document.getElementById("btn").style.color="red";
+                    document.getElementById("btn").value = "Age Must be Greater than 16 years";
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="text" id="outdoor_barcode">
+    <input type="text" id="com_barcode">
+    <input type="submit" id = "btn" value = "Send">
+    
+
+    
+</body>
+</html>

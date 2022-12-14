@@ -1,0 +1,44 @@
+ <script>
+      const regexp_outdoor1 = /12XA0101V[a-zA-Z]\d{6}/g;
+      const regexp_com1 = /LDC[A-Za-z]\d[A-Z]{3}\d{7}/g;
+
+      $(document).ready(function () {
+        $('input[id="btn"]').attr("disabled", true);
+        // for outdoor barcode input
+        $('input[id="outdoor_barcode"]').on("keyup",function() {
+          var outdoor_val = $(this).val();
+          console.log(outdoor_val);
+          const outdoor_val_check = regexp_outdoor1.test(outdoor_val);
+          if (outdoor_val_check) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } else {
+          $('input[id="btn"]').attr("disabled", true);
+          document.getElementById("btn").style.color = "red";
+          document.getElementById("btn").value = "Enter valid barcode";                       
+        }
+          
+        });
+        // for compressor barcode input
+        $('input[id="com_barcode"]').on("keyup",function() {
+            var com_val = $(this).val();
+            console.log(com_val);
+            const com_val_check = regexp_com1.test(com_val);
+            console.log(com_val_check);
+            
+          });
+        
+          
+
+        /* if (outdoor_val_check == true && com_val_check == true) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } else {
+          $('input[id="btn"]').attr("disabled", true);
+          document.getElementById("btn").style.color = "red";
+          document.getElementById("btn").value = "Enter valid barcode";
+        } */
+      });
+    </script>

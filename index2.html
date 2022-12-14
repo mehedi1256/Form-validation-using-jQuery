@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <input
+      type="text"
+      id="outdoor_barcode"
+      value=""
+      onkeyup="form_validation()"
+    />
+    <input type="text" value="" id="comp_barcode" onkeyup="form_validation()" />
+    <input type="submit" id="btn" value="Submit" />
+
+    <script>
+
+      // form validation part begin...
+      var regexp_outdoor1 = /12XA\d{4}V......./;
+      var regexp_com1 = /LDC............/;
+
+      var regexp_outdoor2 = /12XA0201F......./;
+      var regexp_com2 = /1L1................/;
+
+      var regexp_outdoor3 = /12XA0401F......./;
+      var regexp_com3 = /1L1................/;
+
+      var regexp_outdoor4 = /12XC0403V......./;
+      var regexp_com4 = /G4H........./;
+
+      var regexp_outdoor5 = /12XF0805V......./;
+      var regexp_com5 = /%2M........../;
+
+      var regexp_outdoor6 = /12XF0905V......./;
+      var regexp_com6 = /%2M........../;
+
+
+      var regexp_outdoor7 = /12XF0203F......./;
+      var regexp_com7 = /G4H........./;
+
+
+      var regexp_outdoor8 = /12XF0302F......./;
+      var regexp_com8 = /1L1................/;
+
+      var regexp_outdoor9 = /12XF0403V......./;
+      var regexp_com9 = /%5B........../;
+
+
+      var regexp_outdoor10 = /18XC\d{2}06V......./;
+      var regexp_com10 = /%59........../;
+
+      var regexp_outdoor11 = /18XC\d{2}07V......./;
+      var regexp_com11 = /%59........../;
+
+      var regexp_outdoor12 = /18XC0810V......./;
+      var regexp_com12 = /%50........../;
+
+      var regexp_outdoor13 = /18XC0709V......./;
+      var regexp_com13 = /%50........../;
+
+
+      var regexp_outdoor14 = /18XF\d{2}05V......./;
+      var regexp_com14 = /%59........../;
+
+      var regexp_outdoor15 = /18XF\d{2}08V......./;
+      var regexp_com15 = /%59........../;
+
+      var regexp_outdoor16 = /18XF\d{2}12V......./;
+      var regexp_com16 = /%59........../;
+
+      var regexp_outdoor17 = /18XF0305F......./;
+      var regexp_com17 = /LBS........./;
+
+      var regexp_outdoor18 = /18XF0406F......./;
+      var regexp_com18 = /LBS........./;
+
+      var regexp_outdoor19 = /18XF0305F......./;
+      var regexp_com19 = /LBS........./;
+
+      var regexp_outdoor20 = /18XK0101F......./;
+      var regexp_com20 = /LBS........./;
+
+
+      var regexp_outdoor21 = /24XC0203V......./;
+      var regexp_com21 = /2C1................/;
+
+
+      var regexp_outdoor22 = /24XB0403F......./;
+      var regexp_com22 = /LDY............/;
+
+
+      var regexp_outdoor23 = /24XB0504F......./;
+      var regexp_com23 = /LDY............/;
+
+
+      var regexp_outdoor24 = /24XB0203F......./;
+      var regexp_com24 = /LDY............/;
+
+
+      var regexp_outdoor25 = /24XB0304F......./;
+      var regexp_com25 = /LDY............/;
+
+      var regexp_outdoor26 = /24XK0101F......./;
+      var regexp_com26 = /LDY............/;
+
+      var regexp_outdoor27 = /24XH0304V......./;
+      var regexp_com27 = /%51........../;
+
+      var regexp_outdoor28 = /30XC0101V......./;
+      var regexp_com28 = /2C1................/;
+
+      var regexp_outdoor29 = /30XC0201V......./;
+      var regexp_com29 = /2C1................/;
+
+
+
+      $('input[id="btn"]').attr("disabled", true);
+
+      function form_validation() {
+        var outdoor_barcode_val = $("#outdoor_barcode").val();
+        console.log(outdoor_barcode_val);
+        var com_barcode_val = $("#comp_barcode").val();
+        console.log(com_barcode_val);
+        // check outdoor expression value
+        var outdoor_val_check1 = regexp_outdoor1.test(outdoor_barcode_val);
+        console.log(outdoor_val_check1);
+        // check compressor expression value
+        var com_val_check1 = regexp_com1.test(com_barcode_val);
+        console.log(com_val_check1);
+
+       
+
+       
+        var outdoor_val_check2 = regexp_outdoor2.test(outdoor_barcode_val);
+        console.log(outdoor_val_check2);
+        // check compressor expression value
+        var com_val_check2 = regexp_com2.test(com_barcode_val);
+        console.log(com_val_check2);
+
+        var outdoor_val_check3 = regexp_outdoor3.test(outdoor_barcode_val);
+        console.log(outdoor_val_check3);
+        // check compressor expression value
+        var com_val_check3 = regexp_com3.test(com_barcode_val);
+        console.log(com_val_check3);
+
+        var outdoor_val_check4 = regexp_outdoor4.test(outdoor_barcode_val);
+        console.log(outdoor_val_check4);
+        // check compressor expression value
+        var com_val_check4 = regexp_com4.test(com_barcode_val);
+        console.log(com_val_check4);
+
+        var outdoor_val_check5 = regexp_outdoor5.test(outdoor_barcode_val);
+        console.log(outdoor_val_check5);
+        // check compressor expression value
+        var com_val_check5 = regexp_com5.test(com_barcode_val);
+        console.log(com_val_check5);
+
+        var outdoor_val_check6 = regexp_outdoor6.test(outdoor_barcode_val);
+        console.log(outdoor_val_check6);
+        // check compressor expression value
+        var com_val_check6 = regexp_com6.test(com_barcode_val);
+        console.log(com_val_check6);
+
+        var outdoor_val_check7 = regexp_outdoor7.test(outdoor_barcode_val);
+        console.log(outdoor_val_check7);
+        // check compressor expression value
+        var com_val_check7 = regexp_com7.test(com_barcode_val);
+        console.log(com_val_check7);
+
+        var outdoor_val_check8 = regexp_outdoor8.test(outdoor_barcode_val);
+        console.log(outdoor_val_check8);
+        // check compressor expression value
+        var com_val_check8 = regexp_com8.test(com_barcode_val);
+        console.log(com_val_check8);
+
+        var outdoor_val_check9 = regexp_outdoor9.test(outdoor_barcode_val);
+        console.log(outdoor_val_check9);
+        // check compressor expression value
+        var com_val_check9 = regexp_com9.test(com_barcode_val);
+        console.log(com_val_check9);
+
+        var outdoor_val_check10 = regexp_outdoor10.test(outdoor_barcode_val);
+        console.log(outdoor_val_check10);
+        // check compressor expression value
+        var com_val_check10 = regexp_com10.test(com_barcode_val);
+        console.log(com_val_check10);
+
+        var outdoor_val_check11= regexp_outdoor11.test(outdoor_barcode_val);
+        console.log(outdoor_val_check11);
+        // check compressor expression value
+        var com_val_check11 = regexp_com11.test(com_barcode_val);
+        console.log(com_val_check11);
+
+        var outdoor_val_check12 = regexp_outdoor12.test(outdoor_barcode_val);
+        console.log(outdoor_val_check12);
+        // check compressor expression value
+        var com_val_check12 = regexp_com12.test(com_barcode_val);
+        console.log(com_val_check12);
+
+        var outdoor_val_check13 = regexp_outdoor13.test(outdoor_barcode_val);
+        console.log(outdoor_val_check13);
+        // check compressor expression value
+        var com_val_check13 = regexp_com13.test(com_barcode_val);
+        console.log(com_val_check13);
+
+        var outdoor_val_check14 = regexp_outdoor14.test(outdoor_barcode_val);
+        console.log(outdoor_val_check14);
+        // check compressor expression value
+        var com_val_check14 = regexp_com14.test(com_barcode_val);
+        console.log(com_val_check14);
+
+        var outdoor_val_check15 = regexp_outdoor15.test(outdoor_barcode_val);
+        console.log(outdoor_val_check15);
+        // check compressor expression value
+        var com_val_check15 = regexp_com15.test(com_barcode_val);
+        console.log(com_val_check15);
+
+        var outdoor_val_check16 = regexp_outdoor16.test(outdoor_barcode_val);
+        console.log(outdoor_val_check16);
+        // check compressor expression value
+        var com_val_check16 = regexp_com16.test(com_barcode_val);
+        console.log(com_val_check16);
+
+        var outdoor_val_check17 = regexp_outdoor17.test(outdoor_barcode_val);
+        console.log(outdoor_val_check17);
+        // check compressor expression value
+        var com_val_check17 = regexp_com17.test(com_barcode_val);
+        console.log(com_val_check17);
+
+        var outdoor_val_check18 = regexp_outdoor18.test(outdoor_barcode_val);
+        console.log(outdoor_val_check18);
+        // check compressor expression value
+        var com_val_check18 = regexp_com18.test(com_barcode_val);
+        console.log(com_val_check18);
+
+        var outdoor_val_check19 = regexp_outdoor19.test(outdoor_barcode_val);
+        console.log(outdoor_val_check19);
+        // check compressor expression value
+        var com_val_check19 = regexp_com19.test(com_barcode_val);
+        console.log(com_val_check19);
+
+        var outdoor_val_check20 = regexp_outdoor20.test(outdoor_barcode_val);
+        console.log(outdoor_val_check20);
+        // check compressor expression value
+        var com_val_check20 = regexp_com20.test(com_barcode_val);
+        console.log(com_val_check20);
+
+        var outdoor_val_check21 = regexp_outdoor21.test(outdoor_barcode_val);
+        console.log(outdoor_val_check21);
+        // check compressor expression value
+        var com_val_check21 = regexp_com21.test(com_barcode_val);
+        console.log(com_val_check21);
+
+        var outdoor_val_check22 = regexp_outdoor22.test(outdoor_barcode_val);
+        console.log(outdoor_val_check22);
+        // check compressor expression value
+        var com_val_check22 = regexp_com22.test(com_barcode_val);
+        console.log(com_val_check22);
+
+        var outdoor_val_check23 = regexp_outdoor23.test(outdoor_barcode_val);
+        console.log(outdoor_val_check23);
+        // check compressor expression value
+        var com_val_check23 = regexp_com23.test(com_barcode_val);
+        console.log(com_val_check23);
+
+        var outdoor_val_check24 = regexp_outdoor24.test(outdoor_barcode_val);
+        console.log(outdoor_val_check24);
+        // check compressor expression value
+        var com_val_check24 = regexp_com24.test(com_barcode_val);
+        console.log(com_val_check24);
+
+        var outdoor_val_check25 = regexp_outdoor25.test(outdoor_barcode_val);
+        console.log(outdoor_val_check25);
+        // check compressor expression value
+        var com_val_check25 = regexp_com25.test(com_barcode_val);
+        console.log(com_val_check25);
+
+        var outdoor_val_check26 = regexp_outdoor26.test(outdoor_barcode_val);
+        console.log(outdoor_val_check26);
+        // check compressor expression value
+        var com_val_check26 = regexp_com26.test(com_barcode_val);
+        console.log(com_val_check26);
+
+        var outdoor_val_check27 = regexp_outdoor27.test(outdoor_barcode_val);
+        console.log(outdoor_val_check27);
+        // check compressor expression value
+        var com_val_check27 = regexp_com27.test(com_barcode_val);
+        console.log(com_val_check27);
+
+        var outdoor_val_check28 = regexp_outdoor28.test(outdoor_barcode_val);
+        console.log(outdoor_val_check28);
+        // check compressor expression value
+        var com_val_check28 = regexp_com28.test(com_barcode_val);
+        console.log(com_val_check28);
+
+        var outdoor_val_check29 = regexp_outdoor29.test(outdoor_barcode_val);
+        console.log(outdoor_val_check29);
+        // check compressor expression value
+        var com_val_check29 = regexp_com29.test(com_barcode_val);
+        console.log(com_val_check29);
+
+        
+
+        // apply condition
+        
+        if (outdoor_val_check1 && com_val_check1) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+        else if (outdoor_val_check2 && com_val_check2) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+
+        else if (outdoor_val_check3 && com_val_check3) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+
+        else if (outdoor_val_check4 && com_val_check4) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+
+        else if (outdoor_val_check5 && com_val_check5) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+
+        else if (outdoor_val_check6 && com_val_check6) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+
+        else if (outdoor_val_check7 && com_val_check7) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+        else if (outdoor_val_check8 && com_val_check8) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+        else if (outdoor_val_check9 && com_val_check9) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+        else if (outdoor_val_check10 && com_val_check10) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        }
+        else if (outdoor_val_check11 && com_val_check11) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+        else if (outdoor_val_check12 && com_val_check12) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+        else if (outdoor_val_check13 && com_val_check13) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+        else if (outdoor_val_check14 && com_val_check14) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        }  
+
+        else if (outdoor_val_check15 && com_val_check15) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+
+        else if (outdoor_val_check16 && com_val_check16) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+        else if (outdoor_val_check17 && com_val_check17) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+        else if (outdoor_val_check18 && com_val_check18) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+        else if (outdoor_val_check19 && com_val_check19) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+        else if (outdoor_val_check20 && com_val_check20) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+
+        else if (outdoor_val_check21 && com_val_check21) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+        else if (outdoor_val_check22 && com_val_check22) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+        else if (outdoor_val_check23 && com_val_check23) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+        else if (outdoor_val_check24 && com_val_check24) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+        else if (outdoor_val_check25 && com_val_check25) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+        else if (outdoor_val_check26 && com_val_check26) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+        else if (outdoor_val_check27 && com_val_check27) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+        else if (outdoor_val_check28 && com_val_check28) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+        else if (outdoor_val_check29 && com_val_check29) {
+          $('input[id="btn"]').attr("disabled", false);
+          document.getElementById("btn").style.color = "green";
+          document.getElementById("btn").value = "Submit";
+        } 
+        else {
+          $('input[id="btn"]').attr("disabled", true);
+          document.getElementById("btn").style.color = "red";
+          document.getElementById("btn").value = "Enter valid barcode";                       
+        }
+      }
+
+      // form validation part end...
+    </script>
+
+
+
+
+
+  </body>
+</html>
